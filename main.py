@@ -10,6 +10,7 @@ while 1:
 print(result[0:100])
 f.close()
 
+
 # preprocessing
 
 # extract body
@@ -19,9 +20,9 @@ for i in range(result.__len__()):
         index.append(i)
 body = list()
 stop = 5
-body.append(' '.join(result[2:stop-1])[6:end])
+body.append(' '.join(result[2:stop-1])[6:-1])
 for i in index[1:-1]:
-    body.append(' '.join(result[stop+3:i])[6:end])
+    body.append(' '.join(result[stop+3:i])[6:-1])
     stop = i
 
 # compute shingle
