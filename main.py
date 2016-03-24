@@ -1,5 +1,6 @@
 from loadData import *
 from preprocessing import *
+from shingle import *
 from hashFunction import *
 from computeSimiliarity import *
 
@@ -11,6 +12,9 @@ if __name__ == "__main__":
     # compute shingle
 
     #shingleBody = computeShingle(body)
+
+    print go_shingle(go_tokens(body),5)[0]
+    print go_k_shingle(body,5)[0]
 
     shingleBody = [[] for i in range(2)]
     shingleBody[0]=['123','222','346','165']
