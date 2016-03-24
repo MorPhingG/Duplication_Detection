@@ -1,31 +1,35 @@
-# load data
-f = open("dtoEmails_1_0.txt")
-result = list()
-while 1:
-    line = f.readline()
-    # print(line)
-    result.append(line)
-    if not line:
-        break
-print(result[0:100])
-f.close()
+from loadData import *
+from preprocessing import *
 
+# load data
+result = loadData("dtoEmails_1_0.txt")
 
 # preprocessing
 
 # extract body
-index = list() # record the index of "#"
-for i in range(result.__len__()):
-    if(result[i]=="##########################################################\n"):
-        index.append(i)
-body = list()
-stop = 5
-body.append(' '.join(result[2:stop-1])[6:-1])
-for i in index[1:-1]:
-    body.append(' '.join(result[stop+3:i])[6:-1])
-    stop = i
+body = extractBody(result)
 
 # compute shingle
+
+
+# create hash table
+prehash = body[0][0:14]
+hashShingle = list()
+for i in range(100):
+    hashShingle.append(hash(body[i]))
+print(hashShingle)
+
+# compute fingerprint
+
+
+# compute similarity
+hashShingle1 = hashShingle[0:50]
+hashShingle2 = hashShingle[50:100]
+
+union = list(set(hashShingle1).union(set(hashShingle2)))   # computer union set
+intersection = list(set(hashShingle1).intersection(set(hashShingle2))) # computer intersection set
+similiarity = len(union)/len(intersection)
+
 
 # listtostr
 def listToStr(list):
