@@ -1,40 +1,24 @@
 from loadData import *
 from preprocessing import *
-
-# load data
-result = loadData("dtoEmails_1_0.txt")
-
-# preprocessing
-
-# extract body
-body = extractBody(result)
-
-# compute shingle
+from hashFunction import *
+from computeSimiliarity import *
 
 
-# create hash table
-prehash = body[0][0:14]
-hashShingle = list()
-for i in range(100):
-    hashShingle.append(hash(body[i]))
-print(hashShingle)
+if __name__ == "__main__":
+    result = loadData("dtoEmails_1_0.txt") # load data
+    body = extractBody(result) # extract body
 
-# compute fingerprint
+    # compute shingle
 
+    #shingleBody = computeShingle(body)
 
-# compute similarity
-hashShingle1 = hashShingle[0:50]
-hashShingle2 = hashShingle[50:100]
+    shingleBody = [[] for i in range(2)]
+    shingleBody[0]=['123','222','346','165']
+    shingleBody[1]=['155','123','234','357']
+    hashShingle = hashFunction(shingleBody) # create hash table
 
-union = list(set(hashShingle1).union(set(hashShingle2)))   # computer union set
-intersection = list(set(hashShingle1).intersection(set(hashShingle2))) # computer intersection set
-similiarity = len(union)/len(intersection)
+    # compute fingerprint
 
+    similiarity = computeSimiliary(hashShingle) # compute similarity
+    print(similiarity)
 
-# listtostr
-def listToStr(list):
-    newList = list()
-    length=list.__len__
-    for i in range(length):
-        newList = newList + list[i]
-    return(newList)
