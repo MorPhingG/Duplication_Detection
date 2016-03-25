@@ -3,6 +3,7 @@ from preprocessing import *
 from shingle import *
 from hashFunction import *
 from computeSimiliarity import *
+from rabinFingerprint import *
 
 
 if __name__ == "__main__":
@@ -22,6 +23,10 @@ if __name__ == "__main__":
     hashShingle = hashFunction(shingleBody) # create hash table
 
     # compute fingerprint
+
+
+    test = go_shingle(go_tokens(body),3)[0:25]
+    print rabinFingerprint(test)[0]
 
     similiarity = computeSimiliary(hashShingle) # compute similarity
     print(similiarity)
