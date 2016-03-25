@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # compute fingerprint
 
 
-    test = go_shingle(go_tokens(body),3)[0:25]
+    test = go_shingle(go_tokens(body),3)[0:25]# only test
     print rabinFingerprint(test)[0]
 
     similiarity = computeSimiliary(hashShingle) # compute similarity
