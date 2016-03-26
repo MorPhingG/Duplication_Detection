@@ -1,6 +1,7 @@
 import binascii
 
 
+
 #split the string and store in array
 def splitString(str, width):
     return [str[x:x+width] for x in range(0,len(str),width)]
