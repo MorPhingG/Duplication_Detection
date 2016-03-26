@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import binascii
 
 
@@ -65,7 +64,7 @@ def rabinFingerprint(singlings):
         x = binary1polynomials(j)
         y = binary1polynomials(p)
         fingerPrint.append(binary1polynomials.divide(x,y))
-=======
+
 from rabin import Rabin, set_min_block_size, set_max_block_size, set_average_block_size
 
 reached = []
@@ -108,6 +107,6 @@ def rabinFingerprint(emailBody):
             fingerPrint.append(rabinFinger(emailBody[i]))
             global reached
             reached = []
->>>>>>> origin/master
+
 
     return fingerPrint
