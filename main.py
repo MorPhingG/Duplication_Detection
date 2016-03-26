@@ -2,20 +2,20 @@ from loadData import *
 from preprocessing import *
 from shingle import *
 from hashFunction import *
-<<<<<<< HEAD
+
 from computeSimilarity import *
 from rabinFingerprint import *
 from shingle import *
 from minHash import *
-=======
+
 from computeSimiliarity import *
 from rabinFingerprint import *
->>>>>>> origin/master
+
 
 import datetime
 
 
-<<<<<<< HEAD
+
 if __name__ == "__main__":
     starttime = datetime.datetime.now()         # save the time
     result = loadData("dtoEmails_1_0.txt")      # load data
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     endtime = datetime.datetime.now()           # save time
     print((endtime - starttime).seconds)
-=======
+
     print go_shingle(go_tokens(body),5)[0]
     print go_k_shingle(body,5)[0]
 
@@ -55,5 +55,4 @@ if __name__ == "__main__":
 
     similiarity = computeSimiliary(hashShingle) # compute similarity
     print(similiarity)
->>>>>>> origin/master
 
