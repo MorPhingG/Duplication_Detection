@@ -1,5 +1,9 @@
 import re
+<<<<<<< HEAD
 #import numpy as np
+=======
+import numpy as np
+>>>>>>> origin/master
 
 # input: list output: list
 
@@ -15,12 +19,21 @@ def go_tokens(body):
 def shingle(tokens,shinglelength):
     subbody = list()
     if len(tokens)%2 == 1:
+<<<<<<< HEAD
         max_i = len(tokens) - shinglelength
     else:
         max_i = len(tokens) - shinglelength + 1
 
     for i in range(max_i+1):
         subbody.append([' '.join(tokens[i:i+shinglelength])])
+=======
+		max_i = len(tokens) - shinglelength
+    else:
+		max_i = len(tokens) - shinglelength + 1
+
+    for i in range(max_i+1):
+		subbody.append([' '.join(tokens[i:i+shinglelength])])
+>>>>>>> origin/master
     return subbody
 
 # extract k-length shingle in many e-mails
@@ -100,6 +113,7 @@ def jaccard(strings_A,strings_B):
 
 
     for key in shingle_A:
+<<<<<<< HEAD
         frozenkey = frozenset(key)
         intersect[frozenkey] = 0
 
@@ -108,6 +122,16 @@ def jaccard(strings_A,strings_B):
         frozenkey = frozenset(key)
         if frozenkey in intersect:
             count = count +1
+=======
+	    frozenkey = frozenset(key)
+	    intersect[frozenkey] = 0
+
+
+    for key in shingle_B:
+	    frozenkey = frozenset(key)
+	    if frozenkey in intersect:
+		    count = count +1
+>>>>>>> origin/master
     if len(shingle_A) + len(shingle_B) == 0:
         r = 'N/A'
         dist = 'N/'
