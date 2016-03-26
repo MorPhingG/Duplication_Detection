@@ -42,9 +42,7 @@ if __name__ == "__main__":
     print go_shingle(go_tokens(body),5)[0]
     print go_k_shingle(body,5)[0]
 
-    shingleBody = [[] for i in range(2)]
-    shingleBody[0]=['123','222','346','165']
-    shingleBody[1]=['155','123','234','357']
+
     hashShingle = hashFunction(shingleBody) # create hash table
 
     # compute fingerprint
