@@ -1,5 +1,8 @@
 from rabin import Rabin, set_min_block_size, set_max_block_size, set_average_block_size, set_prime
 
+#This method generate the fingerprint of document
+
+
 reached = []
 def block_reached(start, length, fingerprint):
     # print '(%s, %s, %s)' % (start, length, fingerprint)
@@ -21,7 +24,7 @@ def rabinFinger(emailBody):
     return reached
 
 
-
+# input is the list of email body, and the output is the list of fingerprint
 def rabinFingerprint(emailBody):
     fingerPrint = []
     for i in range(0, len(emailBody)):
